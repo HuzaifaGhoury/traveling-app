@@ -1,9 +1,9 @@
 "use client"
 import React, { useState } from 'react';
 import Image from 'next/image';
-import bgimgtwo from '../../../public/Images/bgimg.jpg';
+import bgimgtwo from '../../public/Images/bgimg.jpg';
 import TravelExploreIcon from '@mui/icons-material/TravelExplore';
-import VideoModal from './videomodal';
+import VideoModal from '../components/videomodal';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import { useRouter } from 'next/navigation';
 
@@ -31,7 +31,7 @@ const Page = () => {
     }, 2000);
   };
 
-  return (
+  return ( 
     <div className="relative h-screen">
       <div className="absolute inset-0">
         <Image src={bgimgtwo} alt="background image" layout="fill" objectFit="cover" />

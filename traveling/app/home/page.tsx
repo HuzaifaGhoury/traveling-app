@@ -4,8 +4,8 @@ import bgimg from '../../public/Images/mountain-bg.jpeg';
 import Image from 'next/image';
 import Maincontent from '../components/maincontent'
 // import LandingPage from './components/LandingPage/page'
-import Pagetwo from '../components/about/page'
-import Pagethree from '../components/review/page'
+import Pagetwo from '../components/about'
+import Pagethree from '../components/review'
 
 const Page = () => {
   return (

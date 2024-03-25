@@ -19,9 +19,7 @@ const MainContent: React.FC = () => {
       <p style={headingStyle}>Travel far enough, you meet yourself.</p>
 
     </div>
-
-
-  )
+)
 };
 
 export default MainContent;
