@@ -3,10 +3,10 @@
   import Layout from '../layout';
   import { useQuery } from '@apollo/client'; 
   import { GetExperienceFilter } from '../graphql/queries';
-  import FilterSidebar from '../components/filtersidebar';
+  import FilterSidebar from '../../components/filtersidebar';
   import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
   import { faHeart, faTimes } from '@fortawesome/free-solid-svg-icons';
-  import StarRating from '../components/starrating';
+  import StarRating from '../../components/starrating';
   import roadimg from '../../public/Images/roadimg.jpg';
   import Image from 'next/image';
   
@@ -21,15 +21,15 @@
     experienceDate: { price: number }[];
   }
   
-  const getDurationRange = (duration: string): number[] => {
+  const getDurationRange = (duration: string): number[] => {  
     const [start, end] = duration.split('-').map(Number);
     return Array.from({ length: end - start + 1 }, (_, i) => start + i);
   };  
   
-  const getDefaultDurationRange = (): [number, number] => {
-    // Default range: 1-31
-    return [1, 31];
-  };
+  // const getDefaultDurationRange = (): [number, number] => {
+  //   // Default range: 1-31
+  //   return [1, 31];
+  // }; 
   
   const Page: React.FC = () => {
     const [searchTerm, setSearchTerm] = useState<string>('');
@@ -53,7 +53,7 @@
     }, [data]);
   
     useEffect(() => {
-      filterExperiencesByDuration(selectedDuration);
+      filterExperiencesByDuration(selectedDuration)
     }, [selectedDuration]);
   
     const handleFilterChange = (duration: string) => {
@@ -63,7 +63,7 @@
     const filterExperiencesByDuration = (duration: string) => {
       if (!duration) {
         setExperiences(initialExperiences);
-        return;
+        return; 
       }
   
       const filteredExperiences = initialExperiences.filter((experience) => {
@@ -72,7 +72,8 @@
         return experienceDuration >= min && experienceDuration <= max;
       });
   
-      setExperiences(filteredExperiences);
+    setExperiences(filteredExperiences);
+
     };
   
     const handleClearSearch = () => {
@@ -106,9 +107,9 @@
         }
       }
       
-      return minPrice;
+      return minPrice; 
     };
-  
+
     const renderPagination = () => {
       const pageNumbers = [];
       for (let i = 1; i <= totalPages; i++) {
@@ -123,9 +124,8 @@
     </li>
   ))}
 </ul>
-
-      );
-    };
+)
+}
   
     const experiencesPerPage = 4;
     const indexOfLastExperience = currentPage * experiencesPerPage;
@@ -134,7 +134,7 @@
   
     const totalPages = Math.ceil(experiences.length / experiencesPerPage);
   
-    const handlePageChange = (page: number) => {
+    const handlePageChange = (page: number) => {                             
       setCurrentPage(page);
     };
 
@@ -154,26 +154,26 @@
                   onChange={(e) => setSearchTerm(e.currentTarget.value)}
                 />
                 {searchTerm && (
-                  <FontAwesomeIcon
+                  <FontAwesomeIcon 
                     icon={faTimes}
                     className='absolute right-2 top-3 text-xl cursor-pointer text-gray-500'
                     onClick={handleClearSearch}
                   />
-                )}
+                )} 
               </div>
               {searchTerm && (
-                <div className="absolute z-10 mt-2 bg-white rounded border border-gray-300 shadow-md w-96">
+                <div className="absolute z-10  bg-white rounded border border-gray-300 shadow-md w-96  mt-80">
                   {experiences.map((experience: Experience) => (
                     <div
                       key={experience.id}
-                      onClick={() => handleSelectExperience(experience.name)}
-                      className="cursor-pointer hover:bg-gray-200 px-3 py-2"
+                      onClick={() => handleSelectExperience(experience.name)} 
+                      className="cursor-pointer hover:bg-gray-200 px-3 py-2 "
                     >
                       {experience.name}
                     </div>
-                  ))}
+                  ))}  
                 </div>
-              )}
+              )}  
             </div>
           </div>
   
@@ -202,7 +202,7 @@
                     <div className="flex justify-between">
                       <div>
                         <h2 className="text-lg font-bold">{experience.name}</h2>
-                      </div>
+                      </div> 
                       <div>
                         {experience.experienceDate.map((date, index) => (
                           <p>Price: ${getMinimumPrice(experience.experienceDate)}</p>
@@ -248,4 +248,3 @@
   };
     
   export default Page;
-  

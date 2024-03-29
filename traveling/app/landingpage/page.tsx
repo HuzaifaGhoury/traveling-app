@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import bgimgtwo from '../../public/Images/bgimg.jpg';
 import TravelExploreIcon from '@mui/icons-material/TravelExplore';
-import VideoModal from '../components/videomodal';
+import VideoModal from '../../components/videomodal';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import { useRouter } from 'next/navigation';
 
@@ -46,11 +46,11 @@ const Page = () => {
               className={`bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded mt-4 mr-14 ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
               onClick={handleSignUp}
               disabled={isLoading}
-            >
+            > 
               {isLoading ? (
                 <>
                   <div className='flex gap-2'>
-                    <span>Signing Up</span>
+                    <span>Signing Up</span>   
                     <div className="spinner border-t-4 border-b-4 border-gray-200 rounded-full h-6 w-6 mx-auto"></div>
                   </div>
                 </>

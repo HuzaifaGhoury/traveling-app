@@ -1,10 +1,10 @@
 
 import React from 'react'
 import Image from 'next/image';
-import clientone from '../../public/Images/clientne.avif'
-import clienttwo from '../../public/Images/clienttw.avif'
-import clienthree from '../../public/Images/clientthree.avif'
-import clientfour from '../../public/Images/clientfour.avif'
+import clientone from '@/public/Images/clientne.avif'
+import clienttwo from '@/public/Images/clienttw.avif'
+import clienthree from '@/public/Images/clientthree.avif'
+import clientfour from '@/public/Images/clientfour.avif'
 
 
 const Review = () => {

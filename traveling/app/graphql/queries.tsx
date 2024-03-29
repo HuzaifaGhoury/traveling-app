@@ -42,10 +42,10 @@ export const GetExperienceFilter = gql`
 // import Layout from '../layout';
 // import { useLazyQuery } from '@apollo/client';
 // import { GetExperienceFilter } from '../graphql/queries';
-// import FilterSidebar from '../components/filtersidebar';
+// import FilterSidebar from '../../components/filtersidebar';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faHeart, faTimes } from '@fortawesome/free-solid-svg-icons';
-// import StarRating from '../components/starrating';
+// import StarRating from '../../components/starrating';
 // import roadimg from '../../public/Images/roadimg.jpg';
 // import Image from 'next/image';
 

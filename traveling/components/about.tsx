@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image';
-import aboutimg from '../../public/Images/about us.jpg'
-import aerplain from '../../public/Images/aeroplain.jpg'
+import aboutimg from '@/public/Images/about us.jpg';
+import aerplain from '@/public/Images/aeroplain.jpg'
 
 
 const About = () => {
